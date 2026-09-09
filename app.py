@@ -17,7 +17,7 @@ COVERAGE_URL = 'https://users.rime.ai/v1/coverage'
 
 @app.route('/')
 def home():
-    return app.send_static_file('index.html')
+    return send_file(os.path.join(app.static_folder, 'index.html'))
 
 
 @app.route('/api/speak', methods=['POST'])
