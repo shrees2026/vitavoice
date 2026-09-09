@@ -190,3 +190,4 @@ playPhoneticBtn.addEventListener("click", () => {
 // ---------------------------------------------------------
 populateTermSelect();
 renderSelectedTerm();
+//the end
