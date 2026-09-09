@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VitaVoice — Listen instead of read</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="page">
+
+  <header class="hero">
+    <p class="hero__kicker">VitaVoice</p>
+    <h1 class="hero__title">Listen instead of read.</h1>
+    <p class="hero__sub">Paste a report, a chart note, or a journal excerpt. VitaVoice reads it back — and pronounces the drug names correctly.</p>
+  </header>
+
+  <main>
+
+    <!-- Basic flow -->
+    <section class="card" aria-labelledby="listen-heading">
+      <h2 id="listen-heading" class="card__title">Read a report aloud</h2>
+
+      <label for="report-text" class="field-label">Report text</label>
+      <textarea
+        id="report-text"
+        class="textarea"
+        rows="8"
+        placeholder="The patient was prescribed Metoprolol 50mg twice daily. Continue Atorvastatin as directed..."
+      ></textarea>
+
+      <div class="row">
+        <button id="listen-btn" class="btn btn--primary" type="button">
+          <span class="btn__label">Listen</span>
+          <span class="btn__spinner" hidden></span>
+        </button>
+        <p id="listen-status" class="status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Comparison view -->
+    <section class="card" aria-labelledby="compare-heading">
+      <h2 id="compare-heading" class="card__title">Hear the difference</h2>
+      <p class="card__note">
+        Plain text-to-speech often mispronounces uncommon drug names. A phonetic override
+        fixes it. Pick a term, then play both versions back to back.
+      </p>
+
+      <label for="term-select" class="field-label">Term</label>
+      <select id="term-select" class="select">
+        <!-- populated by script.js -->
+      </select>
+
+      <div class="compare">
+        <div class="compare__panel compare__panel--plain">
+          <div class="compare__label">Plain</div>
+          <p id="plain-text" class="compare__text"></p>
+          <div class="waveform" id="plain-waveform" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <button id="play-plain-btn" class="btn btn--outline" type="button">
+            <span class="btn__label">Play plain</span>
+            <span class="btn__spinner" hidden></span>
+          </button>
+        </div>
+
+        <div class="compare__divider" aria-hidden="true"></div>
+
+        <div class="compare__panel compare__panel--phonetic">
+          <div class="compare__label compare__label--phonetic">With correction</div>
+          <p id="phonetic-text" class="compare__text"></p>
+          <div class="waveform" id="phonetic-waveform" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <button id="play-phonetic-btn" class="btn btn--outline btn--gold" type="button">
+            <span class="btn__label">Play with correction</span>
+            <span class="btn__spinner" hidden></span>
+          </button>
+        </div>
+      </div>
+
+      <p id="compare-status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>VitaVoice — built for the DataForge × Rime Hackathon.</p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
