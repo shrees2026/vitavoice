@@ -14,22 +14,16 @@ const API_BASE = "http://localhost:3000";
 // ---------------------------------------------------------
 const COMPARISON_TERMS = [
   {
-    id: "metoprolol",
-    label: "Metoprolol",
-    plain: "The patient was prescribed Metoprolol.",
-    phonetic: "The patient was prescribed {m0EtOpr1Ol0Al}.",
+    id: "hba1c",
+    label: "HbA1c",
+    plain: "The lab result showed HbA1c of 7.2 percent.",
+    phonetic: "The lab result showed H B A one C of 7.2 percent.",
   },
   {
-    id: "levothyroxine",
-    label: "Levothyroxine",
-    plain: "Continue Levothyroxine as directed.",
-    phonetic: "Continue Levothyroxine as directed.", // TODO: replace with real override
-  },
-  {
-    id: "atorvastatin",
-    label: "Atorvastatin",
-    plain: "Start Atorvastatin 20mg at bedtime.",
-    phonetic: "Start Atorvastatin 20mg at bedtime.", // TODO: replace with real override
+    id: "qid",
+    label: "q.i.d.",
+    plain: "Take this medication q.i.d.",
+    phonetic: "Take this medication cue eye dee.",
   },
 ];
 
